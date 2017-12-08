@@ -60,17 +60,18 @@ functions:
   hello:
     handler: handler.hello
   delete:
-    handler: delete.delete
+    handler: lambdas/delete.delete
   get:
-    handler: get.get
+    handler: lambdas/get.get
   post:
-    handler: post.post
-    request:
-      passThrough: WHEN_NO_TEMPLATES
-      template:
-        application/x-www-form-urlencoded: '{"body" : "$input.body" }'
+    handler: lambdas/post.post
+    integration: lambda
+      request:
+        passThrough: WHEN_NO_TEMPLATES
+        template:
+          application/x-www-form-urlencoded: '{"body" : "$input.body" }'
   update:
-    handler: update.update
+    handler: lambdas/update.update
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
