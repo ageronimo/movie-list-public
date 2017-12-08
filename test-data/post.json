@@ -1,0 +1,16 @@
+{
+  "id"
+  "title": "Star Wars",
+  "year": 1900,
+  "genre": "Romance"
+},
+{
+  "title": "Guardians of the Galaxy",
+  "year": 2015,
+  "genre": "Sci-Fi"
+},
+{
+  "title": "Titanic",
+  "year": 1954,
+  "genre": "Drama"
+},
