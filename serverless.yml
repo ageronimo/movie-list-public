@@ -59,17 +59,20 @@ provider:
 functions:
   hello:
     handler: handler.hello
+
   delete:
     handler: lambdas/delete.delete
+
   get:
     handler: lambdas/get.get
+
   post:
     handler: lambdas/post.post
-    integration: lambda
-      request:
-        passThrough: WHEN_NO_TEMPLATES
-        template:
-          application/x-www-form-urlencoded: '{"body" : "$input.body" }'
+    request:
+      passThrough: WHEN_NO_TEMPLATES
+      template:
+        application/x-www-form-urlencoded: '{"body" : "$input.body" }'
+
   update:
     handler: lambdas/update.update
 

@@ -11,6 +11,8 @@ const Client = new Pool({
   idleTimeoutMillis: 1000
 });
 
+let postMovie = `INSERT INTO MOVIES (id, title, year, genre) VALUES ();`;
+
 module.exports.post = (param) => {
 
 };
