@@ -18,7 +18,7 @@ const Client = new Pool({
 // make sql query string that is used to get data from db
 // CORS
 // let getAllMovies = "SELECT * FROM " + table + "ORDER BY id ASC";
-let getAllMovies = 'select * from movie_list;';
+let getAllMovies = 'select * from movies;';
 module.exports.get = (event, context, callback) => {
 
 console.log('running GET function...');
@@ -29,7 +29,22 @@ console.log('running GET function...');
     client.release();
     return client.query(getAllMovies)
   })
-  .then(res => {})
-  // .connect(), .then(), .release(), .query()
+  .then(res => {
+    const response = {
+      statusCode: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true
+      },
+      body: JSON.stringify({
+        message: res
+        // input: event,
+      }),
+    };
+
+  callback(null, response);
+  })
+
+
 
 };

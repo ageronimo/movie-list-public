@@ -69,20 +69,20 @@ functions:
       passThrough: WHEN_NO_TEMPLATES
       template:
         application/x-www-form-urlencoded: '{"body" : "$input.body" }'
-    events:
-      http:
-        path: users/photos
-        method: get
-        cors:
-          origin: '*'
-          headers:
-            - Content-Type
-            - X-Amz-Date
-            - Authorization
-            - X-Api-Key
-            - X-Amz-Security-Token
-            - X-Amz-User-Agent
-          allowCredentials: false
+    # events:
+    #   http:
+    #     path: users/photos
+    #     method: get
+    #     cors:
+    #       origin: '*'
+    #       headers:
+    #         - Content-Type
+    #         - X-Amz-Date
+    #         - Authorization
+    #         - X-Api-Key
+    #         - X-Amz-Security-Token
+    #         - X-Amz-User-Agent
+    #       allowCredentials: false
 
   post:
     handler: lambdas/post.post
@@ -90,20 +90,20 @@ functions:
       passThrough: WHEN_NO_TEMPLATES
       template:
         application/x-www-form-urlencoded: '{"body" : "$input.body" }'
-    events:
-      http:
-        path: users/photos
-        method: get
-        cors:
-          origin: '*'
-          headers:
-            - Content-Type
-            - X-Amz-Date
-            - Authorization
-            - X-Api-Key
-            - X-Amz-Security-Token
-            - X-Amz-User-Agent
-          allowCredentials: false
+    # events:
+    #   http:
+    #     path: users/photos
+    #     method: get
+    #     cors:
+    #       origin: '*'
+    #       headers:
+    #         - Content-Type
+    #         - X-Amz-Date
+    #         - Authorization
+    #         - X-Api-Key
+    #         - X-Amz-Security-Token
+    #         - X-Amz-User-Agent
+    #       allowCredentials: false
 
   update:
     handler: lambdas/update.update
