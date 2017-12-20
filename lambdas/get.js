@@ -19,6 +19,7 @@ const Client = new Pool({
 // CORS
 // let getAllMovies = "SELECT * FROM " + table + "ORDER BY id ASC";
 let getAllMovies = 'select * from movies;';
+
 module.exports.get = (event, context, callback) => {
 
 console.log('running GET function...');

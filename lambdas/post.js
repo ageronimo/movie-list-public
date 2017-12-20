@@ -14,9 +14,8 @@ const mock = JSON.parse(require('../test-data/post.json'));
 // let values = ['id', 'title', 'year', 'genre'];
 
 
-module.exports.post = (param) => {
-  mock.forEach(obj => {
-    let postMovie = `insert into movies values (${obj.id}, ${obj.title}, ${obj.year}, ${obj.genre});`
+module.exports.post = (event, context, callback) => {
+    let postMovie = `insert into movies values (${mock.id}, ${mock.title}, ${mock.year}, ${mock.genre});`
     let getAllMovies = 'select * from movies;';
 
     Client.connect()
@@ -35,13 +34,10 @@ module.exports.post = (param) => {
         },
         body: JSON.stringify({
           message: res
-          // input: event,
         }),
       };
-
       callback(null, response);
-      })
 
-  });
+      })
 
 };
