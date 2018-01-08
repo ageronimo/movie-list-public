@@ -9,13 +9,13 @@ const Client = new Pool({
   port,
   idleTimeoutMillis: 1000
 });
-const mock = JSON.parse(require('../test-data/post.json'));
+const data = require('../test-data/post.json');
 
 // let values = ['id', 'title', 'year', 'genre'];
-
+console.log(data);
 
 module.exports.post = (event, context, callback) => {
-    let postMovie = `insert into movies values (${mock.id}, ${mock.title}, ${mock.year}, ${mock.genre});`
+    let postMovie = `insert into movies values (${data.id}, ${data.title}, ${data.year}, ${data.genre});`
     let getAllMovies = 'select * from movies;';
 
     Client.connect()

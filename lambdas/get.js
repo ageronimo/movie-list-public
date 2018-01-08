@@ -43,9 +43,7 @@ console.log('running GET function...');
       }),
     };
 
-  callback(null, response);
+    callback(null, response);
   })
-
-
 
 };
